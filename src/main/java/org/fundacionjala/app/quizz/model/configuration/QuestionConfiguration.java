@@ -15,7 +15,7 @@ public abstract class QuestionConfiguration {
         return hasAdditionalData;
     }
 
-    public String convertValue(String value) {
+    public String convertValueToDate(String value) {
         return value;
     }
 

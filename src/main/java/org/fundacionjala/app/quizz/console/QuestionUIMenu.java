@@ -16,7 +16,6 @@ public class QuestionUIMenu {
         QuestionUIMenu menu = new QuestionUIMenu();
         System.out.println("Type the question title");
         System.out.print("> ");
-//        String title = menu.askQuestionTitle();
         String title = menu.readOption.readStringOption();
         QuestionType questionType = menu.askQuestionType();
         if (questionType == null) {
@@ -66,7 +65,6 @@ public class QuestionUIMenu {
             System.out.println("0. Exit");
 
             char option = readOption.readCharOption();
-//            char option = readOption();
 
             switch (option) {
                 case '1':
@@ -92,26 +90,8 @@ public class QuestionUIMenu {
         for (QuestionType type : QuestionType.values()) {
             System.out.printf("%d. %s" + System.lineSeparator(), type.getCode(), type.getName());
         }
-//        ReadOption readOption = new ReadOption();
         char option = readOption.readCharOption();
-//        char option = readOption();
 
         return QuestionType.getByCode(Character.getNumericValue(option));
     }
-
-//    private String askQuestionTitle() {
-//        System.out.println("Type the question title");
-//        System.out.print("> ");
-//        Scanner sc = new Scanner(System.in);
-////        return System.console().readLine();
-//        return sc.next();
-//}
-
-//READ OPTION
-//    private char readOption() {
-//        System.out.print("> ");
-//        Scanner sc = new Scanner(System.in);
-////        return System.console().readLine().trim().charAt(0);
-//        return sc.next().trim().charAt(0);
-//    }
 }

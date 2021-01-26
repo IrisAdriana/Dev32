@@ -8,7 +8,6 @@ import org.fundacionjala.app.quizz.model.Quiz;
 import org.fundacionjala.app.quizz.model.QuizAnswers;
 
 public class QuizUIHandler {
-	IReadOption readOption = new ReadOption();
 
 
 	public static Quiz createQuiz() {
@@ -41,6 +40,5 @@ public class QuizUIHandler {
         System.out.println("Press ENTER any key to continue");
 		IReadOption readOption = new ReadOption();
 		readOption.readStringOption();
-//		System.console().readLine();
     }
 }

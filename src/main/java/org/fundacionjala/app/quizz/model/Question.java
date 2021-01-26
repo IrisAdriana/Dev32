@@ -11,7 +11,7 @@ public class Question {
     private final List<ValidatorType> validations;
     private final List<String> additionalData;
 
-    private Question(String title, QuestionType questionType, List<ValidatorType> validations) {
+    Question(String title, QuestionType questionType, List<ValidatorType> validations) {
         this.title = title;
         this.questionType = questionType;
         this.validations = validations;

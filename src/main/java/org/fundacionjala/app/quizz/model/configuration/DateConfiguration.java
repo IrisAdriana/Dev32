@@ -12,7 +12,7 @@ public class DateConfiguration extends QuestionConfiguration {
     }
 
     @Override
-    public String convertValue(String value) {
+    public String convertValueToDate(String value) {
         return FORMATTER.format(value);
     }
 }

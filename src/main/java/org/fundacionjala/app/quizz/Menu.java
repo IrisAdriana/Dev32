@@ -1,13 +1,18 @@
 package org.fundacionjala.app.quizz;
 
+import org.fundacionjala.app.quizz.console.IReadOption;
 import org.fundacionjala.app.quizz.console.QuizUIHandler;
+import org.fundacionjala.app.quizz.console.ReadOption;
 import org.fundacionjala.app.quizz.model.Quiz;
 import org.fundacionjala.app.quizz.model.QuizAnswers;
+
+import java.util.Scanner;
 
 public class Menu {
 
     private Quiz quiz;
     private QuizAnswers quizAnswers;
+    IReadOption readOption = new ReadOption();
 
     public Menu() {
         this.quiz = null;
@@ -16,7 +21,7 @@ public class Menu {
 
     public boolean process() {
         showMainMenu();
-        char option = readOption();
+        char option = readOption.readCharOption();
         boolean shouldExit = false;
         switch (option) {
             case '1':
@@ -68,8 +73,10 @@ public class Menu {
         System.out.println("======================================");
     }
 
-    private char readOption() {
-        System.out.print("> ");
-        return System.console().readLine().trim().charAt(0);
-    }
+//    private char readOption() {
+//        System.out.print("> ");
+//        Scanner sc = new Scanner(System.in);
+//        //        return System.console().readLine().charAt(0);
+//        return sc.next().charAt(0);
+//    }
 }

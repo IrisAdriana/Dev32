@@ -6,6 +6,7 @@ import java.util.Set;
 import org.fundacionjala.app.quizz.model.Question;
 
 public class QuestionInputHandler {
+    IReadOption readOption = new ReadOption();
 
     public Set<String> askQuestionValue(Question question) {
         System.out.println("Question: " + question.getTitle());
@@ -18,7 +19,8 @@ public class QuestionInputHandler {
             answers.add(collectAnswerFromOptions(question));
         } else {
             System.out.print(question.getType().getName() + " value: ");
-            String value = System.console().readLine();
+//            String value = System.console().readLine();
+            String value = readOption.readStringOption();
             answers.add(value);
         }
 
@@ -30,7 +32,8 @@ public class QuestionInputHandler {
 
         while (true) {
             showOptions(question);
-            char option = readOption();
+//            System.out.print("> ");
+            char option = readOption.readCharOption();
             if (option == '0') {
                 break;
             }
@@ -47,8 +50,8 @@ public class QuestionInputHandler {
         System.out.println("0. To Finish");
     }
 
-    private char readOption() {
-        System.out.print("> ");
-        return System.console().readLine().trim().charAt(0);
-    }
+//    private char readOption() {
+//        System.out.print("> ");
+//        return System.console().readLine().trim().charAt(0);
+//    }
 }
